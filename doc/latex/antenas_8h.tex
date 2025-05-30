@@ -1,0 +1,486 @@
+\doxysection{/home/vitor/\+Desktop/adicionardoxygen/projeto\+EDA\+\_\+31553/projeto\+EDA\+\_\+\+Fase2\+\_\+\+Melhoria/projeto\+EDA\+\_\+\+Fase2\+\_\+\+Melhoria/antenas.h File Reference}
+\hypertarget{antenas_8h}{}\label{antenas_8h}\index{/home/vitor/Desktop/adicionardoxygen/projetoEDA\_31553/projetoEDA\_Fase2\_Melhoria/projetoEDA\_Fase2\_Melhoria/antenas.h@{/home/vitor/Desktop/adicionardoxygen/projetoEDA\_31553/projetoEDA\_Fase2\_Melhoria/projetoEDA\_Fase2\_Melhoria/antenas.h}}
+
+
+Estruturas e funções para manipulação de antenas em um grafo.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for antenas.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antenas_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antenas_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structAdjacencia}{Adjacencia}}
+\item 
+struct \mbox{\hyperlink{structAntena}{Antena}}
+\item 
+struct \mbox{\hyperlink{structCaminhoNo}{Caminho\+No}}
+\item 
+struct \mbox{\hyperlink{structFilaNo}{Fila\+No}}
+\item 
+struct \mbox{\hyperlink{structGrafo}{Grafo}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structAdjacencia}{Adjacencia}} \mbox{\hyperlink{antenas_8h_ad1a707f5a55de6e25322735fd69b8a96}{Adjacencia}}
+\item 
+typedef struct \mbox{\hyperlink{structAntena}{Antena}} \mbox{\hyperlink{antenas_8h_a843ab8b81393e8ebb3eb6b76e349acc2}{Antena}}
+\item 
+typedef struct \mbox{\hyperlink{structCaminhoNo}{Caminho\+No}} \mbox{\hyperlink{antenas_8h_ab82c17f59f0ef3217d89de2c2f61e022}{Caminho\+No}}
+\item 
+typedef struct \mbox{\hyperlink{structFilaNo}{Fila\+No}} \mbox{\hyperlink{antenas_8h_a677c2079ac1ab46621843c5f3da71daf}{Fila\+No}}
+\item 
+typedef struct \mbox{\hyperlink{structGrafo}{Grafo}} \mbox{\hyperlink{antenas_8h_adab04f64457aac52a13e71e40915bd43}{Grafo}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{antenas_8h_ac46c75e7294c945af23d9da3e3b5a768}{Adicionar\+Adj}} (\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}origem, \mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}destino)
+\item 
+bool \mbox{\hyperlink{antenas_8h_ad16278693879a2a9c2b3cb401bba4d36}{Adicionar\+Antena}} (\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, char freq, int col, int lin)
+\item 
+\mbox{\hyperlink{structGrafo}{Grafo}} \mbox{\hyperlink{antenas_8h_a573fd35edaafc8db3a494e3c41ab1a61}{Carregar\+Antenas\+Do\+Ficheiro}} (const char \texorpdfstring{$\ast$}{*}nome\+\_\+ficheiro)
+\item 
+bool \mbox{\hyperlink{antenas_8h_acfc023b55708a62c24204dc84b05e1db}{Travessia\+Em\+Profundidade}} (\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, \mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}inicio, FILE \texorpdfstring{$\ast$}{*}saida)
+\item 
+bool \mbox{\hyperlink{antenas_8h_ac270724ecaf8fdb9a56b8a16535e9f2b}{Travessia\+Em\+Largura}} (\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, \mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}inicio, FILE \texorpdfstring{$\ast$}{*}saida)
+\item 
+bool \mbox{\hyperlink{antenas_8h_af1bdd09c7693f114da612b96c50ba3a9}{Encontrar\+Caminhos}} (\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, \mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}origem, \mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}destino, FILE \texorpdfstring{$\ast$}{*}saida)
+\item 
+bool \mbox{\hyperlink{antenas_8h_a86286bb4f2de0e99bbd66dc24d04a139}{Mostrar\+Intersecoes}} (\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, char freqA, char freqB, FILE \texorpdfstring{$\ast$}{*}saida)
+\item 
+bool \mbox{\hyperlink{antenas_8h_a7a2f033a77edbf2fb3971d2471bfea49}{Mostrar\+Interferencias}} (\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo, FILE \texorpdfstring{$\ast$}{*}saida)
+\item 
+bool \mbox{\hyperlink{antenas_8h_a423e896035c9ec672061f9ead05292c2}{Resultados}} (\mbox{\hyperlink{structGrafo}{Grafo}} grafo, const char \texorpdfstring{$\ast$}{*}nome\+\_\+ficheiro)
+\item 
+bool \mbox{\hyperlink{antenas_8h_a673217b5e06023cd2b87bde89cb2cd47}{Libertar\+Grafo}} (\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo)
+\item 
+bool \mbox{\hyperlink{antenas_8h_a5f4ca7899307299d713da05e73505b69}{Limpar\+Visitados}} (\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}grafo)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estruturas e funções para manipulação de antenas em um grafo. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Moreira 31553 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2025 
+\end{DoxyDate}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{antenas_8h_ad1a707f5a55de6e25322735fd69b8a96}\label{antenas_8h_ad1a707f5a55de6e25322735fd69b8a96} 
+\index{antenas.h@{antenas.h}!Adjacencia@{Adjacencia}}
+\index{Adjacencia@{Adjacencia}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{Adjacencia}{Adjacencia}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structAdjacencia}{Adjacencia}} \mbox{\hyperlink{structAdjacencia}{Adjacencia}}}
+
+Estrutura que representa uma ligação entre duas antenas. 
+\begin{DoxyParams}{Parameters}
+{\em destino} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena de destino. \\
+\hline
+{\em proxima} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a próxima adjacência na lista de ligações. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{antenas_8h_a843ab8b81393e8ebb3eb6b76e349acc2}\label{antenas_8h_a843ab8b81393e8ebb3eb6b76e349acc2} 
+\index{antenas.h@{antenas.h}!Antena@{Antena}}
+\index{Antena@{Antena}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{Antena}{Antena}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structAntena}{Antena}} \mbox{\hyperlink{structAntena}{Antena}}}
+
+Estrutura que representa uma antena no grafo. 
+\begin{DoxyParams}{Parameters}
+{\em frequencia} & -\/-\/\texorpdfstring{$>$}{>} Frequência de operação da antena (carácter único). \\
+\hline
+{\em coluna} & -\/-\/\texorpdfstring{$>$}{>} Posição horizontal na matriz (coordenada X). \\
+\hline
+{\em linha} & -\/-\/\texorpdfstring{$>$}{>} Posição vertical na matriz (coordenada Y). \\
+\hline
+{\em ligacoes} & -\/-\/\texorpdfstring{$>$}{>} Lista de ligações a outras antenas. \\
+\hline
+{\em visitada} & -\/-\/\texorpdfstring{$>$}{>} Indicador se a antena foi visitada em algoritmos de travessia. \\
+\hline
+{\em proxima} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a próxima antena na lista do grafo. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{antenas_8h_ab82c17f59f0ef3217d89de2c2f61e022}\label{antenas_8h_ab82c17f59f0ef3217d89de2c2f61e022} 
+\index{antenas.h@{antenas.h}!CaminhoNo@{CaminhoNo}}
+\index{CaminhoNo@{CaminhoNo}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{CaminhoNo}{CaminhoNo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structCaminhoNo}{Caminho\+No}} \mbox{\hyperlink{structCaminhoNo}{Caminho\+No}}}
+
+Estrutura que representa um nó em um caminho de antenas. 
+\begin{DoxyParams}{Parameters}
+{\em antena} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena no caminho. \\
+\hline
+{\em proxima} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o próximo nó do caminho. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{antenas_8h_a677c2079ac1ab46621843c5f3da71daf}\label{antenas_8h_a677c2079ac1ab46621843c5f3da71daf} 
+\index{antenas.h@{antenas.h}!FilaNo@{FilaNo}}
+\index{FilaNo@{FilaNo}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{FilaNo}{FilaNo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structFilaNo}{Fila\+No}} \mbox{\hyperlink{structFilaNo}{Fila\+No}}}
+
+Estrutura que representa um nó em uma fila de antenas. 
+\begin{DoxyParams}{Parameters}
+{\em antena} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena na fila. \\
+\hline
+{\em proxima} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o próximo nó da fila. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{antenas_8h_adab04f64457aac52a13e71e40915bd43}\label{antenas_8h_adab04f64457aac52a13e71e40915bd43} 
+\index{antenas.h@{antenas.h}!Grafo@{Grafo}}
+\index{Grafo@{Grafo}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{Grafo}{Grafo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structGrafo}{Grafo}} \mbox{\hyperlink{structGrafo}{Grafo}}}
+
+Estrutura que representa o grafo de antenas. 
+\begin{DoxyParams}{Parameters}
+{\em antenas} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a primeira antena do grafo. \\
+\hline
+{\em total\+Antenas} & -\/-\/\texorpdfstring{$>$}{>} Número total de antenas no grafo. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{antenas_8h_ac46c75e7294c945af23d9da3e3b5a768}\label{antenas_8h_ac46c75e7294c945af23d9da3e3b5a768} 
+\index{antenas.h@{antenas.h}!AdicionarAdj@{AdicionarAdj}}
+\index{AdicionarAdj@{AdicionarAdj}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{AdicionarAdj()}{AdicionarAdj()}}
+{\footnotesize\ttfamily bool Adicionar\+Adj (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{origem,  }\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{destino }\end{DoxyParamCaption})}
+
+Funções para manipulação de antenas em um grafo.
+
+Função para adicionar uma adjacência entre duas antenas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em origem} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena de origem. \\
+\hline
+{\em destino} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena de destino. \\
+\hline
+{\em nova} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a nova adjacência a ser adicionada. \\
+\hline
+{\em return} & -\/-\/\texorpdfstring{$>$}{>} Verdadeiro se a adjacência foi adicionada com sucesso, falso caso contrário. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{antenas_8h_ad16278693879a2a9c2b3cb401bba4d36}\label{antenas_8h_ad16278693879a2a9c2b3cb401bba4d36} 
+\index{antenas.h@{antenas.h}!AdicionarAntena@{AdicionarAntena}}
+\index{AdicionarAntena@{AdicionarAntena}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{AdicionarAntena()}{AdicionarAntena()}}
+{\footnotesize\ttfamily bool Adicionar\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo,  }\item[{char}]{freq,  }\item[{int}]{col,  }\item[{int}]{lin }\end{DoxyParamCaption})}
+
+Função para adicionar uma nova antena ao grafo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o grafo onde a antena será adicionada. \\
+\hline
+{\em freq} & -\/-\/\texorpdfstring{$>$}{>} Frequência da antena (carácter único). \\
+\hline
+{\em col} & -\/-\/\texorpdfstring{$>$}{>} Posição horizontal da antena (coordenada X). \\
+\hline
+{\em lin} & -\/-\/\texorpdfstring{$>$}{>} Posição vertical da antena (coordenada Y). \\
+\hline
+{\em return} & -\/-\/\texorpdfstring{$>$}{>} Verdadeiro se a antena foi adicionada com sucesso, falso caso contrário. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{antenas_8h_a573fd35edaafc8db3a494e3c41ab1a61}\label{antenas_8h_a573fd35edaafc8db3a494e3c41ab1a61} 
+\index{antenas.h@{antenas.h}!CarregarAntenasDoFicheiro@{CarregarAntenasDoFicheiro}}
+\index{CarregarAntenasDoFicheiro@{CarregarAntenasDoFicheiro}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{CarregarAntenasDoFicheiro()}{CarregarAntenasDoFicheiro()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structGrafo}{Grafo}} Carregar\+Antenas\+Do\+Ficheiro (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro }\end{DoxyParamCaption})}
+
+Função para carregar antenas de um ficheiro e construir o grafo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome\+Ficheiro} & -\/-\/\texorpdfstring{$>$}{>} Nome do ficheiro contendo as antenas. \\
+\hline
+{\em grafo} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o grafo onde as antenas serão carregadas. \\
+\hline
+{\em ficheiro} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o ficheiro aberto. \\
+\hline
+{\em num\+Linhas} & -\/-\/\texorpdfstring{$>$}{>} Número de linhas do ficheiro (altura da matriz). \\
+\hline
+{\em num\+Colunas} & -\/-\/\texorpdfstring{$>$}{>} Número de colunas do ficheiro (largura da matriz). \\
+\hline
+{\em buffer\+Linha} & -\/-\/\texorpdfstring{$>$}{>} Buffer para ler cada linha do ficheiro. \\
+\hline
+{\em Adionar\+Antena} & -\/-\/\texorpdfstring{$>$}{>} Função para adicionar uma antena ao grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{structGrafo}{Grafo} contendo as antenas carregadas. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antenas_8h_a573fd35edaafc8db3a494e3c41ab1a61_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{antenas_8h_af1bdd09c7693f114da612b96c50ba3a9}\label{antenas_8h_af1bdd09c7693f114da612b96c50ba3a9} 
+\index{antenas.h@{antenas.h}!EncontrarCaminhos@{EncontrarCaminhos}}
+\index{EncontrarCaminhos@{EncontrarCaminhos}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{EncontrarCaminhos()}{EncontrarCaminhos()}}
+{\footnotesize\ttfamily bool Encontrar\+Caminhos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo,  }\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{origem,  }\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{destino,  }\item[{FILE \texorpdfstring{$\ast$}{*}}]{saida }\end{DoxyParamCaption})}
+
+Função para encontrar todos os caminhos entre duas antenas no grafo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o grafo onde as antenas estão localizadas. \\
+\hline
+{\em origem} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena de origem. \\
+\hline
+{\em destino} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena de destino. \\
+\hline
+{\em saida} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o ficheiro onde os caminhos serão impressos. \\
+\hline
+{\em Encontrar\+Caminhos\+Rec} & -\/-\/\texorpdfstring{$>$}{>} Função recursiva para encontrar caminhos. \\
+\hline
+{\em Limpar\+Visitados} & -\/-\/\texorpdfstring{$>$}{>} Função para limpar os visitados das antenas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Verdadeiro se os caminhos foram encontrados com sucesso, falso caso contrário. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antenas_8h_af1bdd09c7693f114da612b96c50ba3a9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{antenas_8h_a673217b5e06023cd2b87bde89cb2cd47}\label{antenas_8h_a673217b5e06023cd2b87bde89cb2cd47} 
+\index{antenas.h@{antenas.h}!LibertarGrafo@{LibertarGrafo}}
+\index{LibertarGrafo@{LibertarGrafo}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{LibertarGrafo()}{LibertarGrafo()}}
+{\footnotesize\ttfamily bool Libertar\+Grafo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo }\end{DoxyParamCaption})}
+
+Função para libertar a memória alocada para o grafo e suas antenas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o grafo a ser libertado. \\
+\hline
+{\em atual} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena atual sendo processada. \\
+\hline
+{\em adj} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a lista de adjacências da antena atual. \\
+\hline
+{\em temp} & -\/-\/\texorpdfstring{$>$}{>} Apontador temporário para armazenar a antena atual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Verdadeiro se o grafo foi libertado com sucesso, falso caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{antenas_8h_a5f4ca7899307299d713da05e73505b69}\label{antenas_8h_a5f4ca7899307299d713da05e73505b69} 
+\index{antenas.h@{antenas.h}!LimparVisitados@{LimparVisitados}}
+\index{LimparVisitados@{LimparVisitados}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{LimparVisitados()}{LimparVisitados()}}
+{\footnotesize\ttfamily bool Limpar\+Visitados (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo }\end{DoxyParamCaption})}
+
+Função para limpar os visitados de todas as antenas no grafo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o grafo cujas antenas serão limpas. \\
+\hline
+{\em \doxylink{structAntena}{Antena}} & -\/-\/\texorpdfstring{$>$}{>} Estrutura que representa uma antena no grafo. \\
+\hline
+{\em visitada} & -\/-\/\texorpdfstring{$>$}{>} Indicador se a antena foi visitada em algoritmos de travessia. \\
+\hline
+{\em proxima} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a próxima antena na lista do grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Verdadeiro se a limpeza foi bem sucedida, falso caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{antenas_8h_a7a2f033a77edbf2fb3971d2471bfea49}\label{antenas_8h_a7a2f033a77edbf2fb3971d2471bfea49} 
+\index{antenas.h@{antenas.h}!MostrarInterferencias@{MostrarInterferencias}}
+\index{MostrarInterferencias@{MostrarInterferencias}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{MostrarInterferencias()}{MostrarInterferencias()}}
+{\footnotesize\ttfamily bool Mostrar\+Interferencias (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo,  }\item[{FILE \texorpdfstring{$\ast$}{*}}]{saida }\end{DoxyParamCaption})}
+
+Função para mostrar os pontos de interferência entre antenas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o grafo onde as antenas estão localizadas. \\
+\hline
+{\em saida} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o ficheiro onde os pontos de interferência serão escritos. \\
+\hline
+{\em \doxylink{structAntena}{Antena}} & -\/-\/\texorpdfstring{$>$}{>} Estrutura que representa uma antena no grafo. \\
+\hline
+{\em proxima} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a próxima antena na lista do grafo. \\
+\hline
+{\em dx} & -\/-\/\texorpdfstring{$>$}{>} Diferença entre as colunas das antenas. \\
+\hline
+{\em dy} & -\/-\/\texorpdfstring{$>$}{>} Diferença entre as linhas das antenas. \\
+\hline
+{\em k} & -\/-\/\texorpdfstring{$>$}{>} Contador para calcular os pontos de interferência. \\
+\hline
+{\em return} & -\/-\/\texorpdfstring{$>$}{>} Verdadeiro se os pontos de interferência foram mostrados com sucesso, falso caso contrário. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{antenas_8h_a86286bb4f2de0e99bbd66dc24d04a139}\label{antenas_8h_a86286bb4f2de0e99bbd66dc24d04a139} 
+\index{antenas.h@{antenas.h}!MostrarIntersecoes@{MostrarIntersecoes}}
+\index{MostrarIntersecoes@{MostrarIntersecoes}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{MostrarIntersecoes()}{MostrarIntersecoes()}}
+{\footnotesize\ttfamily bool Mostrar\+Intersecoes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo,  }\item[{char}]{freqA,  }\item[{char}]{freqB,  }\item[{FILE \texorpdfstring{$\ast$}{*}}]{saida }\end{DoxyParamCaption})}
+
+Mostra as interseções entre antenas de diferentes frequências.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o grafo onde as antenas estão localizadas. \\
+\hline
+{\em freqA} & -\/-\/\texorpdfstring{$>$}{>} Frequência da primeira antena. \\
+\hline
+{\em freqB} & -\/-\/\texorpdfstring{$>$}{>} Frequência da segunda antena. \\
+\hline
+{\em saida} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o ficheiro onde as interseções serão escritas.\+q \\
+\hline
+{\em \doxylink{structAntena}{Antena}} & -\/-\/\texorpdfstring{$>$}{>} Estrutura que representa uma antena no grafo. \\
+\hline
+{\em proxima} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a próxima antena na lista do grafo. \\
+\hline
+{\em return} & -\/-\/\texorpdfstring{$>$}{>} Verdadeiro se as interseções foram mostradas com sucesso, falso caso contrário. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{antenas_8h_a423e896035c9ec672061f9ead05292c2}\label{antenas_8h_a423e896035c9ec672061f9ead05292c2} 
+\index{antenas.h@{antenas.h}!Resultados@{Resultados}}
+\index{Resultados@{Resultados}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{Resultados()}{Resultados()}}
+{\footnotesize\ttfamily bool Resultados (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafo}{Grafo}}}]{grafo,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{nome\+Ficheiro }\end{DoxyParamCaption})}
+
+Função para gerar os resultados das análises e escrever em um ficheiro.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & -\/-\/\texorpdfstring{$>$}{>} \doxylink{structGrafo}{Grafo} contendo as antenas carregadas. \\
+\hline
+{\em nome\+Ficheiro} & -\/-\/\texorpdfstring{$>$}{>} Nome do ficheiro onde os resultados serão escritos. \\
+\hline
+{\em saida} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o ficheiro aberto para escrita. \\
+\hline
+{\em primeira} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a primeira antena no grafo. \\
+\hline
+{\em terceira} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a terceira antena no grafo (se houver). \\
+\hline
+{\em return} & -\/-\/\texorpdfstring{$>$}{>} Verdadeiro se os resultados foram gerados com sucesso, falso caso contrário. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{antenas_8h_a423e896035c9ec672061f9ead05292c2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{antenas_8h_ac270724ecaf8fdb9a56b8a16535e9f2b}\label{antenas_8h_ac270724ecaf8fdb9a56b8a16535e9f2b} 
+\index{antenas.h@{antenas.h}!TravessiaEmLargura@{TravessiaEmLargura}}
+\index{TravessiaEmLargura@{TravessiaEmLargura}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{TravessiaEmLargura()}{TravessiaEmLargura()}}
+{\footnotesize\ttfamily bool Travessia\+Em\+Largura (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo,  }\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{inicio,  }\item[{FILE \texorpdfstring{$\ast$}{*}}]{saida }\end{DoxyParamCaption})}
+
+Função para realizar uma travessia em largura no grafo de antenas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o grafo onde a travessia será realizada. \\
+\hline
+{\em inicio} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena de início da travessia. \\
+\hline
+{\em saida} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o ficheiro onde os resultados serão escritos. \\
+\hline
+{\em \doxylink{structFilaNo}{Fila\+No}} & -\/-\/\texorpdfstring{$>$}{>} Estrutura para representar um nó na fila de travessia. \\
+\hline
+{\em frente} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o início da fila. \\
+\hline
+{\em tras} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o final da fila. \\
+\hline
+{\em novo} & -\/-\/\texorpdfstring{$>$}{>} Apontador para um novo nó a ser adicionado à fila. \\
+\hline
+{\em visitada} & -\/-\/\texorpdfstring{$>$}{>} Indicador se a antena foi visitada. \\
+\hline
+{\em \doxylink{structAntena}{Antena}} & -\/-\/\texorpdfstring{$>$}{>} Estrutura que representa uma antena no grafo. \\
+\hline
+{\em temp} & -\/-\/\texorpdfstring{$>$}{>} Apontador temporário para armazenar o nó atual da fila. \\
+\hline
+{\em \doxylink{structAdjacencia}{Adjacencia}} & -\/-\/\texorpdfstring{$>$}{>} Estrutura que representa uma ligação entre antenas. \\
+\hline
+{\em adj} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a lista de adjacências da antena atual. \\
+\hline
+{\em atual} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena atual sendo processada na travessia. \\
+\hline
+{\em novo\+No} & -\/-\/\texorpdfstring{$>$}{>} Apontador para um novo nó a ser adicionado à fila. \\
+\hline
+{\em return} & -\/-\/\texorpdfstring{$>$}{>} Verdadeiro se a travessia foi bem sucedida, falso caso contrário. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{antenas_8h_acfc023b55708a62c24204dc84b05e1db}\label{antenas_8h_acfc023b55708a62c24204dc84b05e1db} 
+\index{antenas.h@{antenas.h}!TravessiaEmProfundidade@{TravessiaEmProfundidade}}
+\index{TravessiaEmProfundidade@{TravessiaEmProfundidade}!antenas.h@{antenas.h}}
+\doxysubsubsection{\texorpdfstring{TravessiaEmProfundidade()}{TravessiaEmProfundidade()}}
+{\footnotesize\ttfamily bool Travessia\+Em\+Profundidade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGrafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{grafo,  }\item[{\mbox{\hyperlink{structAntena}{Antena}} \texorpdfstring{$\ast$}{*}}]{atual,  }\item[{FILE \texorpdfstring{$\ast$}{*}}]{saida }\end{DoxyParamCaption})}
+
+Função para realizar uma travessia em profundidade no grafo de antenas..
+
+
+\begin{DoxyParams}{Parameters}
+{\em grafo} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o grafo cujas antenas serão limpas. \\
+\hline
+{\em atual} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena atual. \\
+\hline
+{\em saida} & -\/-\/\texorpdfstring{$>$}{>} Apontador para o ficheiro onde os resultados serão escritos. \\
+\hline
+{\em visitada} & -\/-\/\texorpdfstring{$>$}{>} Indicador se a antena foi visitada. \\
+\hline
+{\em adj} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a lista de adjacências da antena atual. \\
+\hline
+{\em ligacoes} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a lista de ligações da antena atual. \\
+\hline
+{\em proxima} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a próxima antena na lista do grafo. \\
+\hline
+{\em destino} & -\/-\/\texorpdfstring{$>$}{>} Apontador para a antena de destino na adjacência. \\
+\hline
+{\em return} & -\/-\/\texorpdfstring{$>$}{>} Verdadeiro se a travessia foi bem sucedida, falso caso contrário. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{antenas_8h_acfc023b55708a62c24204dc84b05e1db_cgraph}
+\end{center}
+\end{figure}
