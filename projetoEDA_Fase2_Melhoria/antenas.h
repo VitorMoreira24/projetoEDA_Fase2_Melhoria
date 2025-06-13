@@ -14,6 +14,7 @@
 #include <string.h>
 #include <math.h>
 #define _CRT_SECURE_NO_WARNINGS
+#define MAX_X 1024
 
 #pragma region Adjacencias
 /**
@@ -22,7 +23,7 @@
  * @param proxima --> Apontador para a próxima adjacência na lista de ligações.
  */
 typedef struct Adjacencia {
-    struct Antena* destino;   
+    struct Antena* destino;    
     struct Adjacencia* proxima; 
 } Adjacencia;
 #pragma endregion
@@ -87,17 +88,33 @@ typedef struct Grafo {
 /**
  * Funções para manipulação de antenas em um grafo.
  */
-bool AdicionarAdj(Antena* origem, Antena* destino);
-bool AdicionarAntena(Grafo* grafo, char freq, int col, int lin);
+int AdicionarAdj(Antena* origem, Antena* destino);
+int AdicionarAntena(Grafo* grafo, char freq, int col, int lin);
 Grafo CarregarAntenasDoFicheiro(const char* nome_ficheiro);
-bool TravessiaEmProfundidade(Grafo* grafo, Antena* inicio, FILE* saida);
-bool TravessiaEmLargura(Grafo* grafo, Antena* inicio, FILE* saida);
-bool EncontrarCaminhos(Grafo* grafo, Antena* origem, Antena* destino, FILE* saida);
-bool MostrarIntersecoes(Grafo* grafo, char freqA, char freqB, FILE* saida);
-bool MostrarInterferencias(Grafo* grafo, FILE* saida);
-bool Resultados(Grafo grafo, const char* nome_ficheiro);
-bool LibertarGrafo(Grafo* grafo);
-bool LimparVisitados(Grafo* grafo);
+int TravessiaEmProfundidade(Grafo* grafo, Antena* inicio, FILE* saida);
+int TravessiaEmLargura(Grafo* grafo, Antena* inicio, FILE* saida);
+int EncontrarCaminhos(Grafo* grafo, Antena* origem, Antena* destino, FILE* saida);
+int MostrarIntersecoes(Grafo* grafo, char freqA, char freqB, FILE* saida);
+int MostrarInterferencias(Grafo* grafo, FILE* saida);
+int Resultados(Grafo grafo, const char* nome_ficheiro);
+int LibertarGrafo(Grafo* grafo);
+int LimparVisitados(Grafo* grafo);
 #pragma endregion
 
-#endif
+#pragma region FuncoesNovas
+/**
+ * Funções para manipulação de antenas em um grafo.
+ */
+Antena* procurarAntena(Grafo* cidade, int coluna, int linha);
+Antena* popularAntena(char freq, int coluna, int linha);
+int adicionarAntenaOrdenado(Grafo* cidade, char freq, int coluna, int linha);
+int adicionarAntenaFim(Grafo* cidade, Antena* ultimaAntena, char freq, int coluna, int linha);
+Grafo* adicionarAntenaFimOtimizado(Grafo* cidade, Antena* ultimaAntena, char freq, int coluna, int linha);
+int removerAntena(Grafo* cidade, int coluna, int linha);
+Adjacencia* popularAdjacencia(Antena* destino);
+Adjacencia* procurarAdjacencia(Antena* antenaAtual, Antena* destino);
+int adicionarAresta(Antena* antenaAtual, Antena* destino, bool verificarRepetidos);
+int removerAresta(Antena* antenaAtual, Antena* destino);
+int carregarAntenasDoFicheiro(Grafo* cidade, const char* nomeFicheiro);
+#pragma endregion
+

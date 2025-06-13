@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="funcoes.c" />
+    <ClCompile Include="funcoesnovas.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>

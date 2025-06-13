@@ -6,12 +6,12 @@ A @ (1,2)
 B @ (4,1)
 A @ (7,0)
 
-=== BUSCA EM PROFUNDIDADE ===
+=== PROCURA EM PROFUNDIDADE ===
 Antena A @ (4,5)
 Antena A @ (7,0)
 Antena A @ (1,2)
 
-=== BUSCA EM LARGURA ===
+=== PROCURA EM LARGURA ===
 Antena A @ (4,5)
 Antena A @ (7,0)
 Antena A @ (1,2)
