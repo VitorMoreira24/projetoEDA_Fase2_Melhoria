@@ -101,7 +101,7 @@ int LibertarGrafo(Grafo* grafo);
 int LimparVisitados(Grafo* grafo);
 #pragma endregion
 
-#pragma region FuncoesNovass
+#pragma region FuncoesNovas
 /**
  * Funções para manipulação de antenas em um grafo.
  */
