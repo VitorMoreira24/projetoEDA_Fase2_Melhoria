@@ -21,3 +21,7 @@ Para aceder ao downlaod da fase 1 e 2, a partir do repositório GITHUB realizar 
 ## Compilação do Programa
 
 Através do Visual Studio em primeira instância compilar o programa
+
+## Pontos Adicionais
+
+Considere por favor, o ficheiro funcoesnovas.c, consta la as funções principais realizadas de raiz, sem qualquer uso de IA
