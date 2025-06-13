@@ -118,3 +118,4 @@ int removerAresta(Antena* antenaAtual, Antena* destino);
 int carregarAntenasDoFicheiro(Grafo* cidade, const char* nomeFicheiro);
 #pragma endregion
 
+#endif // FUNCOES_H
