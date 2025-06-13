@@ -1,6 +1,23 @@
+/*****************************************************************//**
+ * \file   funcoesnovas.c
+ * \brief  funcoes de Melhoria para manipulação de antenas em um grafo.
+ * 
+ * \author vitor
+ * \date   June 2025
+ *********************************************************************/
 #define _CRT_SECURE_NO_WARNINGS
 #include "antenas.h"
 
+#pragma region ProcurarAntena
+ /**
+  * Função para procurar uma antena específica no grafo.
+  *
+  * @param grafo --> Apontador para o grafo onde as antenas estão localizadas.
+  * @param coluna --> Posição horizontal da antena (coordenada X).
+  * @param linha --> Posição vertical da antena (coordenada Y).
+  * @param antenaAtual --> Apontador para a antena atual na lista do grafo.
+  * @param proxima --> Apontador para a próxima antena na lista do grafo.
+  */
 Antena* procurarAntena(Grafo* cidade, int coluna, int linha){
 	
 	if (cidade == NULL) {
@@ -15,7 +32,18 @@ Antena* procurarAntena(Grafo* cidade, int coluna, int linha){
 		return NULL; 
 	}
 }
+#pragma endregion
 
+#pragma region PopularAntena
+/**
+ * Função para popular uma nova antena com os dados fornecidos.
+ *
+ * @param freq --> Frequência da antena (carácter único).
+ * @param coluna --> Posição horizontal da antena (coordenada X).
+ * @param linha --> Posição vertical da antena (coordenada Y).
+ * @param novaAntena --> Apontador para a nova antena a ser criada.
+ * @return Apontador para a nova antena ou NULL se não conseguir alocar memória.
+ */
 Antena* popularAntena(char freq, int coluna, int linha) {
 	Antena* novaAntena = malloc(sizeof(Antena));
 	if (novaAntena == NULL) {
@@ -29,7 +57,22 @@ Antena* popularAntena(char freq, int coluna, int linha) {
 	novaAntena->proxima = NULL; // Inicializa como o último elemento da lista
 	return novaAntena;
 }
+#pragma endregion
 
+#pragma region AdicionarAntenaOrdenado
+/**
+ * Função para adicionar uma antena ao grafo de forma ordenada.
+ *
+ * @param cidade --> Apontador para o grafo onde a antena será adicionada.
+ * @param freq --> Frequência da antena (carácter único).
+ * @param coluna --> Posição horizontal da antena (coordenada X).
+ * @param linha --> Posição vertical da antena (coordenada Y).
+ * @param antenaAnterior --> Apontador para a antena anterior na lista do grafo.
+ * @param antenaPosterior --> Apontador para a antena posterior na lista do grafo.
+ * @param novaAntena --> Apontador para a nova antena a ser criada.
+ * @return 0 se a antena foi adicionada com sucesso, -1 se o grafo for nulo,
+ *         -2 se a antena já existir na posição, -3 se falhar ao alocar memória.
+ */
 int adicionarAntenaOrdenado(Grafo* cidade, char freq, int coluna, int linha) {
 
 	if (cidade == NULL) {
@@ -80,7 +123,20 @@ int adicionarAntenaOrdenado(Grafo* cidade, char freq, int coluna, int linha) {
 	}	
 	cidade->totalAntenas++;
 }
+#pragma endregion
 
+#pragma region AdicionarAntenaFim
+/**
+ * Função para adicionar uma antena ao final da lista de antenas do grafo.
+ *
+ * @param cidade --> Apontador para o grafo onde a antena será adicionada.
+ * @param freq --> Frequência da antena (carácter único).
+ * @param coluna --> Posição horizontal da antena (coordenada X).
+ * @param linha --> Posição vertical da antena (coordenada Y).
+ * @param antenaAtual --> Apontador para a antena atual na lista do grafo.
+ * @return 0 se a antena foi adicionada com sucesso, -1 se o grafo for nulo,
+ *         -2 se falhar ao alocar memória.
+ */
 int adicionarAntenaFim(Grafo* cidade, char freq, int coluna, int linha) {
 
 	if (cidade == NULL) {
@@ -103,6 +159,20 @@ int adicionarAntenaFim(Grafo* cidade, char freq, int coluna, int linha) {
 		}
 	}
 }
+#pragma endregion
+
+#pragma region AdicionarAntenaFimOtimizado
+/**
+ * Função otimizada para adicionar uma antena ao final da lista de antenas do grafo.
+ *
+ * @param cidade --> Apontador para o grafo onde a antena será adicionada.
+ * @param ultimaAntena --> Apontador para a última antena na lista do grafo.
+ * @param freq --> Frequência da antena (carácter único).
+ * @param coluna --> Posição horizontal da antena (coordenada X).
+ * @param linha --> Posição vertical da antena (coordenada Y).
+ * @param novaAntena --> Apontador para a nova antena a ser criada.
+ * @return Apontador para a nova antena ou NULL se não conseguir alocar memória.
+ */
 Grafo* adicionarAntenaFimOtimizado(Grafo* cidade, Antena* ultimaAntena, char freq, int coluna, int linha) {
 	Antena* novaAntena = popularAntena(freq, coluna, linha);
 	if (novaAntena == NULL) {
@@ -118,7 +188,20 @@ Grafo* adicionarAntenaFimOtimizado(Grafo* cidade, Antena* ultimaAntena, char fre
 
 	return novaAntena;
 }
+#pragma endregion
 
+#pragma region removerAntena
+/**
+ * Função para remover uma antena específica do grafo.
+ *
+ * @param cidade --> Apontador para o grafo onde a antena será removida.
+ * @param coluna --> Posição horizontal da antena (coordenada X).
+ * @param linha --> Posição vertical da antena (coordenada Y).
+ * @param antenaAnterior --> Apontador para a antena anterior na lista do grafo.
+ * @param antenaPosterior --> Apontador para a antena posterior na lista do grafo.
+ * @return 0 se a antena foi removida com sucesso, -1 se o grafo for nulo,
+ *         -2 se a antena não for encontrada.
+ */
 int removerAntena(Grafo* cidade, int coluna, int linha) {
 	if (cidade == NULL) {
 		return -1;
@@ -148,9 +231,17 @@ int removerAntena(Grafo* cidade, int coluna, int linha) {
 	}
 	return -2; // Antena não encontrada
 }
+#pragma endregion
 
 //ARESTAS
 
+#pragma region PopularAdjacencia
+/**
+ * Função para popular uma nova adjacência entre antenas.
+ *
+ * @param destino --> Apontador para a antena de destino da adjacência.
+ * @return Apontador para a nova adjacência ou NULL se não conseguir alocar memória.
+ */
 Adjacencia* popularAdjacencia(Antena* destino) {
 	Adjacencia* novaAdjacencia = malloc(sizeof(Adjacencia));
 	if(novaAdjacencia == NULL){
@@ -161,7 +252,17 @@ Adjacencia* popularAdjacencia(Antena* destino) {
 
 	return novaAdjacencia;
 }
+#pragma endregion
 
+#pragma region ProcurarAdjacencia
+/**
+ * Função para procurar uma adjacência entre antenas.
+ *
+ * @param antenaAtual --> Apontador para a antena atual na lista de ligações.
+ * @param destino --> Apontador para a antena de destino da adjacência.
+ * @param primeiraAdj --> Apontador para a primeira adjacência na lista de ligações.
+ * @return Apontador para a adjacência encontrada ou NULL se não encontrar.
+ */
 Adjacencia* procurarAdjacencia(Antena* antenaAtual, Antena* destino) {
 	if (antenaAtual == NULL || destino == NULL) {
 		return NULL; 
@@ -174,7 +275,20 @@ Adjacencia* procurarAdjacencia(Antena* antenaAtual, Antena* destino) {
 	}
 	return NULL; // Retorna NULL se não encontrar a adjacência
 }
+#pragma endregion
 
+#pragma region AdicionarAresta
+/**
+ * Função para adicionar uma aresta
+ *
+ * @param antenaAtual --> Apontador para a antena atual onde a aresta será adicionada.
+ * @param destino --> Apontador para a antena de destino da aresta.
+ * @param verificarRepetidos --> Indicador se deve verificar se a aresta já existe.
+ * @param novaAdjacencia --> Apontador para a nova adjacência a ser criada.
+ * @return 0 se a aresta foi adicionada com sucesso, -1 se a antena atual for nula,
+ *         -2 se o destino for nulo, -3 se ambos forem nulos, -4 se falhar ao alocar memória,
+ *         -5 se a aresta já existir, -6 se não encontrar a aresta para remover.
+ */
 int adicionarAresta(Antena* antenaAtual, Antena* destino, bool verificarRepetidos){
 	if (antenaAtual == NULL) {
 		if (destino == NULL){
@@ -201,7 +315,19 @@ int adicionarAresta(Antena* antenaAtual, Antena* destino, bool verificarRepetido
 	 
 	return 0; 
 }
+#pragma endregion
 
+#pragma region RemoverAresta
+/**
+ * Função para remover uma aresta entre antenas.
+ *
+ * @param antenaAtual --> Apontador para a antena atual onde a aresta será removida.
+ * @param destino --> Apontador para a antena de destino da aresta.
+ * @param adjAnterior --> Apontador para a adjacência anterior na lista de ligações.
+ * @param adjPosterior --> Apontador para a adjacência posterior na lista de ligações.
+ * @return 0 se a aresta foi removida com sucesso, -1 se a antena atual for nula,
+ *         -2 se o destino for nulo, -3 se ambos forem nulos, -6 se não encontrar a aresta para remover.
+ */
 int removerAresta(Antena* antenaAtual, Antena* destino) {
 	if (antenaAtual == NULL) {
 		if (destino == NULL) {
@@ -239,7 +365,19 @@ int removerAresta(Antena* antenaAtual, Antena* destino) {
 	}
 	return -6;
 }
+#pragma endregion
 
+#pragma region CarregarAntenasDoFicheiro
+/**
+ * Função para carregar antenas de um ficheiro e adicioná-las ao grafo.
+ *
+ * @param cidade --> Apontador para o grafo onde as antenas serão carregadas.
+ * @param nomeFicheiro --> Nome do ficheiro de onde as antenas serão lidas.
+ * @param ultimaAntena --> Apontador para a última antena adicionada, usado para otimização.
+ * @param bufferLinha --> Buffer para ler cada linha do ficheiro.
+ * @param MAX_X --> Tamanho máximo do buffer para leitura de linhas.
+ * @return 0 se as antenas foram carregadas com sucesso, -1 se não conseguir abrir o ficheiro.
+ */
 int carregarAntenasDoFicheiro(Grafo* cidade, const char* nomeFicheiro) {
 	FILE* ficheiro = fopen(nomeFicheiro, "r");
 
@@ -262,3 +400,4 @@ int carregarAntenasDoFicheiro(Grafo* cidade, const char* nomeFicheiro) {
 	}
 	return 0;
 }
+#pragma endregion
