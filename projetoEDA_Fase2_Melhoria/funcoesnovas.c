@@ -244,7 +244,7 @@ int carregarAntenasDoFicheiro(Grafo* cidade, const char* nomeFicheiro) {
 	FILE* ficheiro = fopen(nomeFicheiro, "r");
 
 	if (nomeFicheiro == NULL) {
-		return -1; // Se não conseguir abrir o ficheiro, retorna o grafo vazio
+		return -1; // Se não conseguir abrir o ficheiro, retorna o grafo vazioo
 	}
 
 	Antena* ultimaAntena = NULL;

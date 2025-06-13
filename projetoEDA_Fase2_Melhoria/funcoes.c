@@ -537,7 +537,7 @@ int LibertarGrafo(Grafo* grafo) {
 
 #pragma region LimparVisitados
 /**
- * Função para limpar os visitados de todas as antenas no grafo.
+ * Função para limpar os visitados de todas as antenas no grafo
  *
  * @param grafo --> Apontador para o grafo cujas antenas serão limpas.
  * @param Antena --> Estrutura que representa uma antena no grafo.
